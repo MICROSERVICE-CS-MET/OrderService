@@ -6,6 +6,6 @@ import org.mapstruct.Mapper
 
 @Mapper
 interface OrderMapper {
-    fun completeOrderEventToOrder(completeOrderEvent: CompleteOrderEvent):Order
-    fun stringToOrderEvent(orderEvent:String):CompleteOrderEvent
+    fun completeOrderEventToOrder(completeOrderEvent: CompleteOrderEvent): Order
+    fun stringToOrderEvent(orderEvent: String): CompleteOrderEvent
 }

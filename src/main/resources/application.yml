@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-kafka-consumer
+  kafka:
+    bootstrap-servers: http://localhost:29092
+    consumer:
+      auto-offset-reset: earliest
+      group-id: kafka-consumer
+  data:
+    mongodb:
+      host: localhost
+      port: 27017

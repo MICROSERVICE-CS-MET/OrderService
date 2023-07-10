@@ -9,4 +9,3 @@ class OrderServiceApplication
 fun main(args: Array<String>) {
     runApplication<OrderServiceApplication>(*args)
 }
-

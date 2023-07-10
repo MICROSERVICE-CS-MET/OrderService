@@ -5,9 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 data class Order(
-    @Id val id : String?=null,
+    @Id val id: String? = null,
     var userId: String,
-    var orderItems : List<OrderItem>,
+    var orderItems: List<OrderItem>,
     var totalPrice: Double,
-    var isCanceled: Boolean
+    var isCanceled: Boolean,
 )

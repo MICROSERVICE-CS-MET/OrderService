@@ -2,7 +2,6 @@ package com.example.orderservice.exception
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.stereotype.Component
 
-
 @Component
 class ExceptionUtil {
     fun getFullUri(request: HttpServletRequest): String {
@@ -29,5 +28,4 @@ class ExceptionUtil {
 
         return builder.toString()
     }
-
 }

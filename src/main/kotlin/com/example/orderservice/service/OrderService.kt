@@ -14,7 +14,7 @@ class OrderService(
     suspend fun findByUserId(userId:String):List<Order>{
         return orderRepository.findByUserId(userId)
     }
-    suspend fun save(order:Order):Order{
+     fun save(order:Order):Order{
         return  orderRepository.save(order)
     }
     suspend fun cancelOrder(id:String){

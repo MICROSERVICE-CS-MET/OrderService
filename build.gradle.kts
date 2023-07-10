@@ -36,6 +36,9 @@ dependencies {
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
+
+    implementation("org.springframework.kafka:spring-kafka")
+    testImplementation("org.springframework.kafka:spring-kafka-test")
 }
 
 tasks.withType<KotlinCompile> {

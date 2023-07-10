@@ -2,20 +2,13 @@ package com.example.orderservice.controller
 
 import com.example.orderservice.domain.model.Order
 import com.example.orderservice.service.OrderService
-import org.bson.types.ObjectId
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/orders")
 class OrderController (
-    private val orderService: OrderService
+    private val orderService: OrderService,
 ){
     @GetMapping("/{userId}")
     suspend fun findByUserId(@PathVariable("userId")userId:String):List<Order>{
@@ -32,3 +25,4 @@ class OrderController (
     }
 
 }
+

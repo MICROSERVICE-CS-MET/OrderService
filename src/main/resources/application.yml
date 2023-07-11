@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-kafka-consumer
+    name: order-service
   kafka:
     bootstrap-servers: http://localhost:29092
     consumer:
@@ -11,3 +11,7 @@ spring:
       host: localhost
       port: 27017
       database: order-db
+  banner:
+    location: banner.txt
+server:
+  port: 4040

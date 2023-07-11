@@ -13,8 +13,8 @@ class OrderService(
     suspend fun findByUserId(userId: String): List<Order> {
         return orderRepository.findByUserId(userId)
     }
-    fun save(order: Order): Order {
-        return orderRepository.save(order)
+    fun handleReceivedOrder(order: Order) {
+        orderRepository.save(order)
     }
     suspend fun cancelOrder(id: String) {
         var order = getOrderById(id)

@@ -2,7 +2,6 @@ package com.example.orderservice.controller
 
 import com.example.orderservice.domain.dto.response.OrderResponse
 import com.example.orderservice.domain.mapper.OrderMapper
-import com.example.orderservice.domain.model.Order
 import com.example.orderservice.service.OrderService
 import org.mapstruct.factory.Mappers
 import org.springframework.http.ResponseEntity
@@ -15,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/orders")
 class OrderController(
-    private val orderService: OrderService,
+    private val orderService: OrderService
 ) {
     @GetMapping("/{userId}")
     suspend fun findByUserId(@PathVariable("userId")userId: String): List<OrderResponse> {
-        val converter=Mappers.getMapper(OrderMapper::class.java)
+        val converter = Mappers.getMapper(OrderMapper::class.java)
         return converter.ordersToOrdersResponse(orderService.findByUserId(userId))
     }
 

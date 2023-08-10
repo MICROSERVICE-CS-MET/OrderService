@@ -4,5 +4,5 @@ data class OrderItemResponse(
     var productId: String,
     var productCount: Int,
     var unitPrice: Double?,
-    var totalPrice: Double?,
+    var totalPrice: Double?
 )

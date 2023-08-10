@@ -8,7 +8,7 @@ import org.springframework.web.context.request.WebRequest
 
 @RestControllerAdvice
 class GlobalExceptionHandler(
-    val exceptionUtil: ExceptionUtil,
+    val exceptionUtil: ExceptionUtil
 ) {
     @ExceptionHandler
     fun handleGeneralException(ex: Exception, request: WebRequest): ResponseEntity<GeneralExceptionMessage> {
@@ -16,7 +16,7 @@ class GlobalExceptionHandler(
         val errorMessage = GeneralExceptionMessage(
             ex.message,
             exceptionUtil.getFullUri(servletRequest.request),
-            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            HttpStatus.INTERNAL_SERVER_ERROR.value()
         )
         return ResponseEntity(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR)
     }

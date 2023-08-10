@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class OrderService(
-    private val orderRepository: OrderRepository,
+    private val orderRepository: OrderRepository
 ) {
 
     suspend fun findByUserId(userId: String): List<Order> {

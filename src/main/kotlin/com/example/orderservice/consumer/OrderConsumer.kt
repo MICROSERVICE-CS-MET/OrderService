@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component
 
 @Component
 class OrderConsumer(
-    private val orderService: OrderService,
+    private val orderService: OrderService
 ) {
     @KafkaListener(topics = [COMPLETE_ORDER_TOPIC], groupId = GROUP_ID)
-    fun firstListener(completeOrderEvent: CompleteOrderEvent) {
+    fun completeOrderEventListener(completeOrderEvent: CompleteOrderEvent) {
         println(completeOrderEvent.userId)
         val converter = Mappers.getMapper(OrderMapper::class.java)
         val order = converter.completeOrderEventToOrder(completeOrderEvent)

@@ -9,5 +9,5 @@ data class Order(
     var userId: String,
     var orderItems: List<OrderItem>,
     var totalPrice: Double,
-    var isCanceled: Boolean,
+    var isCanceled: Boolean
 )

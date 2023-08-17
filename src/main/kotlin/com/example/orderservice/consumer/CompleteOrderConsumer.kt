@@ -10,7 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
 @Component
-class OrderConsumer(
+class CompleteOrderConsumer(
     private val orderService: OrderService
 ) {
     @KafkaListener(topics = [COMPLETE_ORDER_TOPIC], groupId = GROUP_ID)

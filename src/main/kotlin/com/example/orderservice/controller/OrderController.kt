@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 class OrderController(
     private val orderService: OrderService
 ) {
-    @GetMapping("/{userId}")
+    @GetMapping("/findByUserId/{userId}")
     suspend fun findByUserId(@PathVariable("userId")userId: String): List<OrderResponse> {
         val converter = Mappers.getMapper(OrderMapper::class.java)
         return converter.ordersToOrdersResponse(orderService.findByUserId(userId))

@@ -16,7 +16,7 @@ class OrderController(
     private val orderService: OrderService
 ) {
     @GetMapping("/find-by-user-id/{userId}")
-    suspend fun findByUserId(@PathVariable("userId")userId: String): List<OrderResponse> {
+    suspend fun getByUserId(@PathVariable("userId")userId: String): List<OrderResponse> {
         val converter = Mappers.getMapper(OrderMapper::class.java)
         return converter.ordersToOrdersResponse(orderService.findByUserId(userId))
     }

@@ -14,7 +14,7 @@ class CompleteOrderConsumer(
     private val orderService: OrderService
 ) {
     @KafkaListener(topics = [COMPLETE_ORDER_TOPIC], groupId = GROUP_ID)
-    fun completeOrderEventListener(completeOrderEvent: CompleteOrderEvent) {
+    fun receive(completeOrderEvent: CompleteOrderEvent) {
         println(completeOrderEvent.userId)
         val converter = Mappers.getMapper(OrderMapper::class.java)
         val order = converter.completeOrderEventToOrder(completeOrderEvent)
